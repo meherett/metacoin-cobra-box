@@ -1,0 +1,61 @@
+compile:
+  solidity_path_dir: "./contracts"
+  artifact_path_dir: "./build/contracts"
+  contracts: [
+      contract: {
+          solidity: "ConvertLib.sol",
+          solidity_path_dir: "./contracts/libs"
+      },
+      contract: {
+          solidity: "MetaCoin.sol"
+      },
+      contract: {
+          solidity: "Greeter.sol"
+      }
+    ]
+
+deploy:
+  artifact_path_dir: "./build/contracts/"
+  contracts: [
+    contract: {
+        artifact: "ConvertLib.json"
+    },
+    contract: {
+        artifact: "Greeter.json"
+    },
+    contract: {
+        artifact: "MetaCoin.json",
+        links: ["ConvertLib.json"]
+    }
+  ]
+
+test:
+  artifact_path_dir: "./build/contracts/"
+  test_paths: ["./tests"]
+  contracts: [
+    contract: {
+        artifact: "ConvertLib.json"
+    },
+    contract: {
+        artifact: "MetaCoin.json",
+        links: ["ConvertLib.json"]
+    }
+  ]
+
+network:
+  development: {
+#      url: "https://ropsten.infura.io/v3/14ba444524c3489fa46331b771a23d5c",
+      host: "localhost",
+      port: 8545,
+      hdwallet: {
+#          mnemonic: "meheret tesfaye batu bayu",
+#          password: "meherett",
+          private: "46189ce41e240bce61429b8f5732a1c9e5d09575560f8a7581443d838a846da0",
+          gas: 3000000
+      },
+      protocol: "HTTP",
+#      account: {
+#        address: "0x6a373a75c388ac2d160f1d2b6d9ada34f29831cd",
+#        gas: 3000000
+#      }
+  }

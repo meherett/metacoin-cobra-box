@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/cobra-smart-contract-example.iml" filepath="$PROJECT_DIR$/.idea/cobra-smart-contract-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../metacoin-example/.idea/metacoin-example.iml" filepath="$PROJECT_DIR$/../metacoin-example/.idea/metacoin-example.iml" />
+    </modules>
+  </component>
+</project>
